@@ -12,7 +12,7 @@ export const uploadFile = file => (dispatch, getState) => {
     const bodyFormData = new FormData()
     bodyFormData.append("image", file)
     axios
-        .post("/api/files/", bodyFormData, setHeader(getState))
+        .post("https://yelp-back-end.herokuapp.com/api/files/", bodyFormData, setHeader(getState))
         .then(res =>
             dispatch({
                 type: UPLOAD_FILE_SUCCESS,
