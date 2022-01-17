@@ -74,7 +74,7 @@ const RegisterScreen = props => {
                         required
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                     <Form.Label>Name</Form.Label>
                     <Form.Control 
                         type="text" 
@@ -85,7 +85,7 @@ const RegisterScreen = props => {
                         required
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
                     <Form.Label>Password</Form.Label>
                     <Form.Control 
                         type="password" 
@@ -96,7 +96,7 @@ const RegisterScreen = props => {
                         required
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control 
                         type="password" 

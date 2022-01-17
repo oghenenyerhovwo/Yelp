@@ -160,7 +160,7 @@ const EditCampgroundScreen = props => {
                 </Form.Group>
                 {errorUpdateCampground && <MessageBox variant="danger">{errorUpdateCampground} </MessageBox>}
                 <Button block variant="info" type="submit">
-                    Create {"  "}
+                    Update {"  "}
                     {loadingUpdateCampground && <LoadingBox/>}
                 </Button>
             </Form> 

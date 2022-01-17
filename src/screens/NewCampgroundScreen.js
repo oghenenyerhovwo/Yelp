@@ -141,7 +141,7 @@ const NewCampgroundScreen = props => {
                 </Form.Group>
                 {errorCreateCampground && <MessageBox variant="danger">{errorCreateCampground} </MessageBox>}
                 <Button block variant="info" type="submit">
-                    Update  {"  "}
+                    Create  {"  "}
                     {loadingCreateCampground && <LoadingBox/>}
                 </Button>
             </Form> 
