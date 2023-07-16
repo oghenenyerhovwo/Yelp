@@ -24,7 +24,7 @@ import { UPLOAD_FILE_RESET } from "../constants/fileConstant";
 export const listCampgrounds=() => dispatch =>  {
     dispatch({type: LIST_CAMPGROUNDS_REQUEST})
     axios
-      .get("https://yelp-back-end.herokuapp.com/api/campgrounds")
+      .get("https://yelp-5zy5.onrender.com/api/campgrounds")
       .then(res => dispatch({type: LIST_CAMPGROUNDS_SUCCESS, payload: res.data}))
       .then(() => dispatch({type: GET_CAMPGROUND_ARRAY}))
       .catch(err => dispatch({type: LIST_CAMPGROUNDS_FAIL, payload: setErrorMessage(err)}));
@@ -33,7 +33,7 @@ export const listCampgrounds=() => dispatch =>  {
 export const detailCampground=campgroundId => dispatch =>  {
     dispatch({type: DETAIL_CAMPGROUND_REQUEST})
     axios
-      .get("https://yelp-back-end.herokuapp.com/api/campgrounds/" + campgroundId)
+      .get("https://yelp-5zy5.onrender.com/api/campgrounds/" + campgroundId)
       .then(res => dispatch({type: DETAIL_CAMPGROUND_SUCCESS, payload: res.data}))
       .catch(err => dispatch({type: DETAIL_CAMPGROUND_FAIL, payload: setErrorMessage(err)}));
 }
@@ -42,7 +42,7 @@ export const createCampground=(form) => (dispatch, getState) =>  {
   dispatch({type: CREATE_CAMPGROUND_REQUEST, payload: form})
 
   axios
-    .post("https://yelp-back-end.herokuapp.com/api/campgrounds/", form, setHeader(getState))
+    .post("https://yelp-5zy5.onrender.com/api/campgrounds/", form, setHeader(getState))
     .then(res => {
         dispatch({type: CREATE_CAMPGROUND_SUCCESS, payload: res.data})
         dispatch({type: UPLOAD_FILE_RESET})
@@ -53,7 +53,7 @@ export const createCampground=(form) => (dispatch, getState) =>  {
 export const updateCampground=(campgroundId, form) => (dispatch, getState) =>  {
   dispatch({type: UPDATE_CAMPGROUND_REQUEST, payload: form})
   axios
-    .put("https://yelp-back-end.herokuapp.com/api/campgrounds/" + campgroundId, form, setHeader(getState))
+    .put("https://yelp-5zy5.onrender.com/api/campgrounds/" + campgroundId, form, setHeader(getState))
     .then(res => dispatch({type: UPDATE_CAMPGROUND_SUCCESS, payload: res.data}))
     .catch(err => dispatch({type: UPDATE_CAMPGROUND_FAIL, payload: setErrorMessage(err)}));
 }
@@ -61,7 +61,7 @@ export const updateCampground=(campgroundId, form) => (dispatch, getState) =>  {
 export const deleteCampground=(campgroundId) => (dispatch, getState) =>  {
   dispatch({type: DELETE_CAMPGROUND_REQUEST, payload: campgroundId})
   axios
-    .delete("https://yelp-back-end.herokuapp.com/api/campgrounds/" + campgroundId,setHeader(getState))
+    .delete("https://yelp-5zy5.onrender.com/api/campgrounds/" + campgroundId,setHeader(getState))
     .then(res => dispatch({type: DELETE_CAMPGROUND_SUCCESS, payload: res.data}))
     .catch(err => dispatch({type: DELETE_CAMPGROUND_FAIL, payload: setErrorMessage(err)}));
 }
