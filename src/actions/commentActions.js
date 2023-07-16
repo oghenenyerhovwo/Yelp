@@ -16,7 +16,7 @@ import {
 export const createComment=(campgroundId, data) => (dispatch, getState) =>  {
     dispatch({type: CREATE_COMMENT_REQUEST, payload:  {campgroundId, data}})
     axios
-      .post(`https://yelp-back-end.herokuapp.com/api/campgrounds/${campgroundId}/comments`, data, setHeader(getState))
+      .post(`https://yelp-5zy5.onrender.com/api/campgrounds/${campgroundId}/comments`, data, setHeader(getState))
       .then(res => dispatch({type: CREATE_COMMENT_SUCCESS, payload: res.data}))
       .catch(err => dispatch({type: CREATE_COMMENT_FAIL, payload: setErrorMessage(err)}));
 }
@@ -24,7 +24,7 @@ export const createComment=(campgroundId, data) => (dispatch, getState) =>  {
 export const listComment=(campgroundId) => dispatch =>  {
     dispatch({type: LIST_COMMENT_REQUEST, payload:  campgroundId})
     axios
-      .get(`https://yelp-back-end.herokuapp.com/api/campgrounds/${campgroundId}/comments`,)
+      .get(`https://yelp-5zy5.onrender.com/api/campgrounds/${campgroundId}/comments`,)
       .then(res => dispatch({type: LIST_COMMENT_SUCCESS, payload: res.data}))
       .catch(err => dispatch({type: LIST_COMMENT_FAIL, payload: setErrorMessage(err)}));
 }
@@ -32,7 +32,7 @@ export const listComment=(campgroundId) => dispatch =>  {
 export const deleteComment=(campgroundId, commentId) => (dispatch, getState) =>  {
   dispatch({type: DELETE_COMMENT_REQUEST, payload:  {campgroundId, commentId}})
   axios
-    .delete(`https://yelp-back-end.herokuapp.com/api/campgrounds/${campgroundId}/comments/${commentId}`, setHeader(getState))
+    .delete(`https://yelp-5zy5.onrender.com/api/campgrounds/${campgroundId}/comments/${commentId}`, setHeader(getState))
     .then(res => dispatch({type: DELETE_COMMENT_SUCCESS, payload: commentId}))
     .catch(err => dispatch({type: DELETE_COMMENT_FAIL, payload: setErrorMessage(err)}));
 }
