@@ -19,7 +19,7 @@ import {
 export const signInUser=(userData) => dispatch =>  {
     dispatch({type: SIGNIN_USER_REQUEST, payload:  userData})
     axios
-      .post(`https://yelp-back-end.herokuapp.com/api/users/signin`, userData)
+      .post(`https://yelp-5zy5.onrender.com/api/users/signin`, userData)
       .then(res => {
         dispatch({type: SIGNIN_USER_SUCCESS, payload: res.data})
         localStorage.setItem("yelp_camp_user", JSON.stringify(res.data))
@@ -35,7 +35,7 @@ export const signOutUser=() => dispatch =>  {
 export const registerUser=(userData) => dispatch =>  {
   dispatch({type: REGISTER_USER_REQUEST, payload:  userData})
   axios
-    .post(`https://yelp-back-end.herokuapp.com/api/users/register`, userData)
+    .post(`https://yelp-5zy5.onrender.com/api/users/register`, userData)
     .then(res => {
       dispatch({type: REGISTER_USER_SUCCESS, payload: res.data})
       localStorage.setItem("yelp_camp_user", JSON.stringify(res.data))
@@ -46,7 +46,7 @@ export const registerUser=(userData) => dispatch =>  {
 export const listUsers=() => (dispatch, getState) =>  {
   dispatch({type: LIST_USERS_REQUEST,})
   axios
-    .get(`https://yelp-back-end.herokuapp.com/api/users/`, setHeader(getState))
+    .get(`https://yelp-5zy5.onrender.com/api/users/`, setHeader(getState))
     .then(res => {
       dispatch({type: LIST_USERS_SUCCESS, payload: res.data})
     })
@@ -56,7 +56,7 @@ export const listUsers=() => (dispatch, getState) =>  {
 export const updateUserRole=(userId, data) => (dispatch, getState) =>  {
   dispatch({type: UPDATE_USER_ROLE_REQUEST,})
   axios
-    .put(`https://yelp-back-end.herokuapp.com/api/users/${userId}/role`,{role: data}, setHeader(getState))
+    .put(`https://yelp-5zy5.onrender.com/api/users/${userId}/role`,{role: data}, setHeader(getState))
     .then(res => {
       dispatch({type: UPDATE_USER_ROLE_SUCCESS, payload: res.data})
     })
